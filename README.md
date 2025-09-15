@@ -23,14 +23,14 @@ for line in file:
     key = line[0].replace("'","")
     N, M, chi, c2H, H3, alpha, delta, sigma = line[1:]
     topological_invariants[key] = {
-        "N": int(N),
-        "M": int(M),
-        "chi": int(chi),
-        "c2H": int(c2H),
-        "H3": int(H3),
-        "alpha": int(alpha),
-        "delta": int(delta),
-        "sigma": int(sigma),
+        "N": ZZ(N),
+        "M": ZZ(M),
+        "chi": ZZ(chi),
+        "c2H": ZZ(c2H),
+        "H3": ZZ(H3),
+        "alpha": ZZ(alpha),
+        "delta": ZZ(delta),
+        "sigma": ZZ(sigma),
     }
 file.close()
 ```
@@ -107,6 +107,19 @@ This is because there is a sublattice of the homology that is preserved under mo
 monodromy_matrices = CYO.monodromy_from_periods(CYO.periods_from_gamma_class(GC) * diagonal_matrix([1,1,1,1/3])) # this is the *a priori* rational monodromy in the new basis
 change_basis_saturation = CYO.saturate(monodromy_matrices) # we make the monodromy integral again
 print(CYO.gamma_class_from_periods(CYO.periods_from_gamma_class(GC) * diagonal_matrix([1,1,1,1/3]) * change_basis_saturation)) # this is the new Gamma class matrix
+```
+
+## I want to compute the gamma class from topological invariants
+Use the following code:
+```python3
+R.<c> = QQ[]
+N, M, chi, c2H, H3, alpha, delta, sigma = <your data here>
+GC = matrix([
+    [chi*c - alpha/2*c2H/24 -delta/2, M*c2H/24, alpha/2*H3/2, M*H3/6],
+    [c2H/24, N*sigma/2, -H3/2, 0],
+    [1,0,0,0],
+    [alpha*N/M, N, 0, 0]
+])
 ```
 
 
