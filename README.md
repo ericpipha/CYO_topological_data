@@ -1,5 +1,4 @@
-# lefschetz-family
-
+# Topological data for Gamma class formula of Calabi-Yau operators of order four
 
 ## Description
 This repository contains the topological data computed in [arxiv:2505.07685](https://arxiv.org/abs/2505.07685).
@@ -10,7 +9,7 @@ The generation of the data relies on the the `lefschetz-family` package availabl
 
 The list of operators was obtained from [The Calabi-Yau database](https://cydb.mathematik.uni-mainz.de/), see also [The Calabi-Yau cluster](https://cycluster.mpim-bonn.mpg.de/).
 
-> [!CAUTION]
+> [!TIP]
 > The topological invariants are not always unique. It is possible that a rational change of basis preserves integral monodromy. We give an example below
 
 ## How to load the data?
