@@ -67,7 +67,7 @@ This creates a `CalabiYauOperator` object, which has the following methods:
 - `period_matrix`: deduces a period matrix at the basepoint for which the monodromy is integral. There are cases where the monodromy is over a number field. In this case the given period matrix is such that all the rational monodromy matrices are integral.
 - `paths`: computes a generating set of the fundamental group of the projective line punctured at the singularities of the 
 - `monodromy_from_periods(period_matrix)`: computes the monodromy representation from the periods, given by the $4\times 4$ matrices of monodromy along the loops of `CYO.paths`
-- `gamma_class_from_periods(period_matrix)`: computes the change of basis between the scaled Frobenius basis of solutions of the operator at the maximal unipotent monodromy point 0 and the period matrix. This matrix is defined over a polynomial ring over Q of c, and c represents $\zeta(3)/(2\pi i)^3$.
+- `gamma_class_from_periods(period_matrix)`: computes the change of basis between the scaled Frobenius basis of solutions of the operator at the maximal unipotent monodromy point 0 and the period matrix. This matrix is defined over a polynomial ring over $\mathbb Q[c]$, and c represents $\zeta(3)/(2\pi i)^3$.
 - `periods_from_gamma_class(gamma_class)`: conversely, computes the period at the basepoint from a given Gamma class.
 - `cleanup(gamma_class)`: takes a Gamma class matrix, and computes a change of basis that puts it in the standard form given in Conjecture 1 of [arxiv:2505.07685](https://arxiv.org/pdf/2505.07685).
 > [!CAUTION]
