@@ -118,7 +118,7 @@ GC = matrix([
     [chi*c - alpha/2*c2H/24 -delta/2, M*c2H/24, alpha/2*H3/2, M*H3/6],
     [c2H/24, N*sigma/2, -H3/2, 0],
     [1,0,0,0],
-    [alpha*N/M, N, 0, 0]
+    [alpha/2*N/M, N, 0, 0]
 ])
 ```
 
