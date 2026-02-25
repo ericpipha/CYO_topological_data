@@ -5,7 +5,7 @@ This repository contains the topological data computed in [arxiv:2505.07685](htt
 It contains two files `differential_operators.txt` and `topological_data.txt` (which really are `csv` files).
 Each line of `topological_data.txt` contains, in order, the new number of the operator and the invariants `N`, `M`, `chi`, `c2H`, `H3`, `alpha`, `delta` and `sigma`.
 
-The generation of the data relies on the the `lefschetz-family` package available at [https://github.com/ericpipha/lefschetz-family](https://github.com/ericpipha/lefschetz-family), please follow the installation instructions given there.
+The generation of the data relies on the the `lefschetz_family` package available at [https://github.com/ericpipha/lefschetz-family](https://github.com/ericpipha/lefschetz-family), please follow the installation instructions given there.
 
 The list of operators was obtained from [The Calabi-Yau database](https://cydb.mathematik.uni-mainz.de/), see also [The Calabi-Yau cluster](https://cycluster.mpim-bonn.mpg.de/).
 
@@ -54,9 +54,9 @@ This creates a dictionary object for which the keys are the new number of the op
 
 
 ## I have an operator I would like to compute the invariants of. How can i do this?
-You can do this using the `CalabiYauOperator` class of `lefschetz-family`.
+You can do this using the `CalabiYauOperator` class of `lefschetz_family`.
 ```python3
-from lefschetz-family import CalabiYauOperator
+from lefschetz_family import CalabiYauOperator
 L = <your operator as an OreAlgebra element>
 CYO = CalabiYauOperator(L, nbits=nbits, basepoint=basepoint)
 ```
@@ -76,7 +76,7 @@ This creates a `CalabiYauOperator` object, which has the following methods:
 
 An example of usage is
 ```python3
-os.environ["SAGE_NUM_THREADS"] = '8' # lefschetz-family makes usage of parallelism to speed up the computation. Put here the number of cores you want to use.
+os.environ["SAGE_NUM_THREADS"] = '8' # lefschetz_family makes usage of parallelism to speed up the computation. Put here the number of cores you want to use.
 
 from ore_algebra import OreAlgebra
 R.<t> = QQ[]
@@ -90,7 +90,7 @@ for line in file:
     operators[key] = L
 file.close()
 
-from lefschetz-family import CalabiYauOperator
+from lefschetz_family import CalabiYauOperator
 CYO = CalabiYauOperator(operators["3.7"], nbits=800)
 GC = CYO.gamma_class_from_periods(CYO.period_matrix)
 GC = CYO.cleanup(GC) * GC
