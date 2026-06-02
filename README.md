@@ -124,4 +124,4 @@ GC = matrix([
 
 
 ## Contact
-For any question, bug or remark, please contact [eric.pichon@mis.mpg.de](mailto:eric.pichon@mis.mpg.de).
+For any question, bug or remark, please contact [eric.pichon-pharabod@maths.ox.ac.uk](mailto:eric.pichon-pharabod@maths.ox.ac.uk).
